@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Axios ajax library wrapped in RxJs observables, The popular kids are doing it.",
   "private": false,
-  "main": "index.js",
+  "main": "dist/reAxios.js",
   "scripts": {
     "build-prod": "webpack --config=./script/webpack.config.js --env.production",
     "build-dev": "webpack --config=./script/webpack.config.js --watch",
