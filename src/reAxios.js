@@ -32,8 +32,9 @@ import axios from 'axios';
  * Get Oobservables from RxJs
  */
 import {
-    Observable
-} from 'rxjs/Observable';
+    Observable,
+    of
+} from 'rxjs';
 
 /**
  * @class ReAxios
