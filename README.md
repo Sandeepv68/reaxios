@@ -1,2 +1,3 @@
-# reAxios
-Axios wrapped in reactive extentions
+
+# reAxios 
+Axios wrapped in reactive extentions **[WIP]**
