@@ -6,10 +6,25 @@
  * Website: www.sandeepv.in
  */
 
+/**ECMAScript 5's strict mode is a way to opt in to a restricted variant of JavaScript, 
+ * thereby implicitly opting-out of "sloppy mode". Strict mode isn't just a subset: 
+ *  it intentionally has different semantics from normal code. 
+ *  Browsers not supporting strict mode will run strict mode code with 
+ *  different behavior from browsers that do, so don't rely on strict mode without 
+ *  feature-testing for support for the relevant aspects of strict mode. 
+ * Strict mode code and non-strict mode code can coexist, so scripts can opt into strict mode 
+ * incrementally.
+ * Strict mode makes several changes to normal JavaScript semantics:
+ * Eliminates some JavaScript silent errors by changing them to throw errors.
+ * Fixes mistakes that make it difficult for JavaScript engines to perform optimizations: 
+ *  strict mode code can sometimes be made to run faster than identical code that's not strict mode.
+ *  Prohibits some syntax likely to be defined in future versions of ECMAScript.
+ * @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode/Transitioning_to_strict_mode | Strict Mode}
+ **/
 "use strict";
 
 /**
- * Axios library
+ * Axios library for ajax
  */
 import axios from 'axios';
 
@@ -24,53 +39,94 @@ import {
  * @class ReAxios
  * The core reAxios class
  */
-
 class ReAxios {
+
+    /**
+     * The class constructor
+     * @param {*} options - The options object for axios instance
+     */
     constructor(options = {}) {
         this.options = Object.assign({}, options);
         this.http = axios.create(options);
     }
 
+    /**
+     * @memberof ReAxios
+     * @function makeRequest
+     * A function to construct a http request using any http-method and 
+     * associated parameters and pass it to axios instance
+     * @param {String} method - The http method
+     * @param {String} url - The url to perform ajax
+     * @param {Object} queryParams - The query parameters in object representation
+     * @param {Object} body - The request body
+     */
     makeRequest(method, url, queryParams, body) {
 
+        /**
+         * Request init
+         */
         let request;
 
+        /**
+         * Select a method and construct appropriate request
+         */
         switch (method) {
 
+            /**
+             * GET Method
+             */
             case 'GET':
                 request = this.http.get(url, {
                     params: queryParams
                 });
                 break;
 
+            /**
+             * POST Method
+             */
             case 'POST':
                 request = this.http.post(url, body, {
                     params: queryParams
                 });
                 break;
 
+            /**
+             * PUT Method
+             */
             case 'PUT':
                 request = this.http.put(url, body, {
                     params: queryParams
                 });
                 break;
 
+            /**
+             * PATCH Method
+             */
             case 'PATCH':
                 request = this.http.patch(url, body, {
                     params: queryParams
                 });
                 break;
 
+            /**
+             * DELETE Method
+             */
             case 'DELETE':
                 request = this.http.delete(url, {
                     params: queryParams
                 });
                 break;
 
+            /**
+             * Unsupported methods
+             */
             default:
                 throw new Error('Unsupported Method encountered');
         }
 
+        /**
+         * Return the observable
+         */
         return new Observable(subscriber => {
             request.then(response => {
                 subscriber.next(response);
@@ -105,8 +161,8 @@ class ReAxios {
 
 try {
     window.ReAxios = ReAxios;
-} catch(error) {}
+} catch (error) {}
 
 try {
     module.exports = ReAxios;
-} catch(error) {}
+} catch (error) {}
