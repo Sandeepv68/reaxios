@@ -41,7 +41,7 @@ module.exports = (env) => {
         entry: path.resolve(__dirname, '../', 'src/reAxios.js'),
         output: {
             path: path.resolve(__dirname, '../', 'dist'),
-            filename: 'app.bundle.js'
+            filename: env && env.production === true ? 'reAxios.min.js' : 'reAxios.js'
         },
         module: {
             rules: [{
