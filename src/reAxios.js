@@ -31,7 +31,7 @@ class ReAxios {
         this.http = axios.create(options);
     }
 
-    makeRequest = (method, url, queryParams, body) => {
+    makeRequest(method, url, queryParams, body) {
 
         let request;
 
@@ -82,31 +82,31 @@ class ReAxios {
         });
     }
 
-    get = (url, queryParams) => {
+    get(url, queryParams) {
         return this.makeRequest('GET', url, queryParams);
     };
 
-    post = (url, body, queryParams) => {
+    post(url, body, queryParams) {
         return this.makeRequest('POST', url, queryParams, body);
     };
 
-    put = (url, body, queryParams) => {
+    put(url, body, queryParams) {
         return this.makeRequest('PUT', url, queryParams, body);
     };
 
-    patch = (url, body, queryParams) => {
+    patch(url, body, queryParams) {
         return this.makeRequest('PATCH', url, queryParams, body);
     };
 
-    delete = (url, queryParams) => {
+    delete(url, queryParams) {
         return this.makeRequest('DELETE', url, queryParams);
     };
 }
 
 try {
     window.ReAxios = ReAxios;
-} catch {}
+} catch(error) {}
 
 try {
     module.exports = ReAxios;
-} catch {}
+} catch(error) {}
