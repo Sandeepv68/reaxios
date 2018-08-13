@@ -1,0 +1,29 @@
+{
+  "name": "reaxios",
+  "version": "0.0.1",
+  "description": "Axios ajax library wrapped in RxJs observables, The popular kids are doing it.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SandeepVattapparambil/reaxios.git"
+  },
+  "keywords": [
+    "reAxios",
+    "Axios",
+    "Ajax",
+    "RrxJs",
+    "Observables",
+    "Javascript",
+    "Nodejs",
+    "Wrapper"
+  ],
+  "author": "Sandeep Vattapparambil",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SandeepVattapparambil/reaxios/issues"
+  },
+  "homepage": "https://github.com/SandeepVattapparambil/reaxios#readme"
+}
