@@ -6,13 +6,107 @@
  * Website: www.sandeepv.in
  */
 
- /**
-  * @class ReAxios
-  * The core reAxios class
-  */
+"use strict";
 
-  class ReAxios {
+/**
+ * Axios library
+ */
+import axios from 'axios';
 
-  }
+/**
+ * Get Oobservables from RxJs
+ */
+import {
+    Observable
+} from 'rxjs/Observable';
 
-  export default ReAxios;
+/**
+ * @class ReAxios
+ * The core reAxios class
+ */
+
+class ReAxios {
+    constructor(options = {}) {
+        this.options = Object.assign({}, options);
+        this.http = axios.create(options);
+    }
+
+    makeRequest = (method, url, queryParams, body) => {
+
+        let request;
+
+        switch (method) {
+
+            case 'GET':
+                request = this.http.get(url, {
+                    params: queryParams
+                });
+                break;
+
+            case 'POST':
+                request = this.http.post(url, body, {
+                    params: queryParams
+                });
+                break;
+
+            case 'PUT':
+                request = this.http.put(url, body, {
+                    params: queryParams
+                });
+                break;
+
+            case 'PATCH':
+                request = this.http.patch(url, body, {
+                    params: queryParams
+                });
+                break;
+
+            case 'DELETE':
+                request = this.http.delete(url, {
+                    params: queryParams
+                });
+                break;
+
+            default:
+                throw new Error('Unsupported Method encountered');
+        }
+
+        return new Observable(subscriber => {
+            request.then(response => {
+                subscriber.next(response);
+                subscriber.complete();
+            }).catch(err => {
+                subscriber.error(err);
+                subscriber.complete();
+            });
+        });
+    }
+
+    get = (url, queryParams) => {
+        return this.makeRequest('GET', url, queryParams);
+    };
+
+    post = (url, body, queryParams) => {
+        return this.makeRequest('POST', url, queryParams, body);
+    };
+
+    put = (url, body, queryParams) => {
+        return this.makeRequest('PUT', url, queryParams, body);
+    };
+
+    patch = (url, body, queryParams) => {
+        return this.makeRequest('PATCH', url, queryParams, body);
+    };
+
+    delete = (url, queryParams) => {
+        return this.makeRequest('DELETE', url, queryParams);
+    };
+}
+
+try {
+    window.ReAxios = ReAxios;
+} catch {}
+
+try {
+    module.exports = ReAxios;
+} catch {}
