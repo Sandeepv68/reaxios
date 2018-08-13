@@ -59,6 +59,7 @@ class ReAxios {
      * @param {String} url - The url to perform ajax
      * @param {Object} queryParams - The query parameters in object representation
      * @param {Object} body - The request body
+     * @returns {<Observable>} - Returns the observable
      */
     makeRequest(method, url, queryParams, body) {
 
@@ -81,45 +82,45 @@ class ReAxios {
                 });
                 break;
 
-            /**
-             * POST Method
-             */
+                /**
+                 * POST Method
+                 */
             case 'POST':
                 request = this.http.post(url, body, {
                     params: queryParams
                 });
                 break;
 
-            /**
-             * PUT Method
-             */
+                /**
+                 * PUT Method
+                 */
             case 'PUT':
                 request = this.http.put(url, body, {
                     params: queryParams
                 });
                 break;
 
-            /**
-             * PATCH Method
-             */
+                /**
+                 * PATCH Method
+                 */
             case 'PATCH':
                 request = this.http.patch(url, body, {
                     params: queryParams
                 });
                 break;
 
-            /**
-             * DELETE Method
-             */
+                /**
+                 * DELETE Method
+                 */
             case 'DELETE':
                 request = this.http.delete(url, {
                     params: queryParams
                 });
                 break;
 
-            /**
-             * Unsupported methods
-             */
+                /**
+                 * Unsupported methods
+                 */
             default:
                 throw new Error('Unsupported Method encountered');
         }
@@ -138,31 +139,79 @@ class ReAxios {
         });
     }
 
+    /**
+     * @memberof ReAxios
+     * @function get
+     * A helper function to get a url with passed in parameters
+     * @param {String} url - The url string
+     * @param {Object} queryParams - The query parameters in object representation
+     */
     get(url, queryParams) {
         return this.makeRequest('GET', url, queryParams);
     };
 
+    /**
+     * @memberof ReAxios
+     * @function post
+     * A helper function to post a url with paramerters passed in
+     * @param {String} url - The url string
+     * @param {Object} body - The request body
+     * @param {Object} queryParams - The query parameters in object representation
+     */
     post(url, body, queryParams) {
         return this.makeRequest('POST', url, queryParams, body);
     };
 
+    /**
+     * @memberof ReAxios
+     * @function put
+     * A helper function to put a url with paramerters passed in
+     * @param {String} url - The url string
+     * @param {Object} body - The request body
+     * @param {Object} queryParams - The query parameters in object representation
+     */
     put(url, body, queryParams) {
         return this.makeRequest('PUT', url, queryParams, body);
     };
 
+    /**
+     * @memberof ReAxios
+     * @function patch
+     * A helper function to patch a url with paramerters passed in
+     * @param {String} url - The url string
+     * @param {Object} body - The request body
+     * @param {Object} queryParams - The query parameters in object representation
+     */
     patch(url, body, queryParams) {
         return this.makeRequest('PATCH', url, queryParams, body);
     };
 
+    /**
+     * @memberof ReAxios
+     * @function delete
+     * A helper function to delete a url with paramerters passed in
+     * @param {String} url - The url string
+     * @param {Object} queryParams - The query parameters in object representation
+     */
     delete(url, queryParams) {
         return this.makeRequest('DELETE', url, queryParams);
     };
 }
 
+/**
+ * Simple UMD setup
+ */
+
+/**
+ * Try adding to global window object if available
+ */
 try {
     window.ReAxios = ReAxios;
 } catch (error) {}
 
+/**
+ * Try exporting as a module otherwise
+ */
 try {
     module.exports = ReAxios;
 } catch (error) {}
