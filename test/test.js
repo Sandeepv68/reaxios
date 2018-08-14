@@ -1,9 +1,7 @@
-const ReAxios = require('../dist/reAxios.min.js');
+const ReAxios = require('../dist/reAxios.js');
 
 const http = new ReAxios({
-  // all regular axios request configuration options are valid here
-  // check https://github.com/axios/axios#request-config
-  baseUrl: 'https://jsonplaceholder.typicode.com',
+  baseUrl: 'https://api.github.com/',
 });
 
 // plain GET request
