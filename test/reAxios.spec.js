@@ -31,6 +31,15 @@ describe('Given an instance of reAxios', () => {
         expect(reAxiosInstance).toBeInstanceOf(reAxios);
     });
 
+    it('reAxiosInstance makes an Invalid request -> an error is thrown', async () => {
+
+        reAxiosInstance = new reAxios({
+            baseURL: 'http://reaxios.com',
+        });
+
+        expect(() => reAxiosInstance.makeRequest('HEAD')).toThrowError();
+    });
+
     it('reAxiosInstance makes a successful GET request', async () => {
 
         reAxiosInstance = new reAxios({
