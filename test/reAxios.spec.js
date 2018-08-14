@@ -98,4 +98,106 @@ describe('Given an instance of reAxios', () => {
         });
         await expect(promise).resolves.toEqual(response);
     });
+
+    it('reAxiosInstance makes a successful PUT request', async () => {
+
+        reAxiosInstance = new reAxios({
+            baseURL: 'http://reaxios.com',
+        });
+
+        const body = {
+            id: 1,
+            title: 'Hello reAxios!',
+            author: 'Sandeep Vattapparambil'
+        };
+
+        const response = {
+            msg: 'success'
+        }
+
+        /**
+         * Create a server stub
+         */
+        const mockServer = nock('http://reaxios.com').persist();
+
+        mockServer.put('/', body).reply(200, response);
+
+        const promise = new Promise((resolve, reject) => {
+            reAxiosInstance.put('/', body).subscribe(
+                resp => {
+                    resolve(resp.data);
+                },
+                err => {
+                    reject(err);
+                }
+            );
+        });
+        await expect(promise).resolves.toEqual(response);
+    });
+
+    it('reAxiosInstance makes a successful PATCH request', async () => {
+
+        reAxiosInstance = new reAxios({
+            baseURL: 'http://reaxios.com',
+        });
+
+        const body = {
+            id: 1,
+            title: 'Hello reAxios!',
+            author: 'Sandeep Vattapparambil'
+        };
+
+        const response = {
+            msg: 'success'
+        }
+
+        /**
+         * Create a server stub
+         */
+        const mockServer = nock('http://reaxios.com').persist();
+
+        mockServer.patch('/', body).reply(200, response);
+
+        const promise = new Promise((resolve, reject) => {
+            reAxiosInstance.patch('/', body).subscribe(
+                resp => {
+                    resolve(resp.data);
+                },
+                err => {
+                    reject(err);
+                }
+            );
+        });
+        await expect(promise).resolves.toEqual(response);
+    });
+
+    it('reAxiosInstance makes a successful DELETE request', async () => {
+
+        reAxiosInstance = new reAxios({
+            baseURL: 'http://reaxios.com',
+        });
+
+        const body = {
+            id: 1
+        };
+
+        /**
+         * Create a server stub
+         */
+        const mockServer = nock('http://reaxios.com').persist();
+
+        mockServer.delete('/post').reply(200);
+
+        const promise = new Promise((resolve, reject) => {
+            reAxiosInstance.delete('/post').subscribe(
+                resp => {
+                    resolve(resp.status);
+                },
+                err => {
+                    reject(err);
+                }
+            );
+        });
+        await expect(promise).resolves.toEqual(200);
+    });
 });
