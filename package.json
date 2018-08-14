@@ -6,7 +6,7 @@
   "main": "dist/reAxios.js",
   "scripts": {
     "build-prod": "webpack --config=./script/webpack.config.js --env.production",
-    "build-dev": "webpack --config=./script/webpack.config.js --watch",
+    "build-dev": "webpack --config=./script/webpack.config.js ",
     "test": "jest ./test"
   },
   "repository": {
