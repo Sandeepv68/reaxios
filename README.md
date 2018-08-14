@@ -8,16 +8,16 @@ A simple reactive **observable** wrapper for the popular [Axios](https://www.npm
 
 ### Why RxJs and Observables ?
 **RxJs** is a JavaScript library to perform **Reactive programming**. RxJs is the JavaScript implementation of **ReactiveX**. ReactiveX is a combination of the best ideas from the Observer pattern, the Iterator pattern, and functional programming. There are many advantages for reacive programming:
-- **Functional**
+- **Functional** -
 Avoid intricate stateful programs, using clean input/output functions over observable streams.
 
-- **Less is more**
+- **Less is more** -
 ReactiveX's operators often reduce what was once an elaborate challenge into a few lines of code.
 
-- **Async error handling**
+- **Async error handling** -
 Traditional try/catch is powerless for errors in asynchronous computations, but ReactiveX is equipped with proper mechanisms for handling errors.
 
-- **Concurrency made easy**
+- **Concurrency made easy** -
 Observables and Schedulers in ReactiveX allow the programmer to abstract away low-level threading, synchronization, and concurrency issues.
 
 - And the popular kids are doing observables nowadays, its the new **cool**
