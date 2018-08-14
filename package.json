@@ -29,6 +29,7 @@
     "url": "https://github.com/SandeepVattapparambil/reaxios/issues"
   },
   "jest": {
+    "testEnvironment": "node",
     "coverageDirectory": "./coverage/",
     "collectCoverage": true
   },
