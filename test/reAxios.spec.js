@@ -11,7 +11,7 @@ import nock from 'nock';
 /**
  * Get build distributable
  */
-import reAxios from '../dist/reAxios';
+import reAxios from '../dist/reAxios.min';
 
 /**
  * Describe the tests
