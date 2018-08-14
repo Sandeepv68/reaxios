@@ -14,17 +14,8 @@ import nock from 'nock';
 import reAxios from '../dist/reAxios';
 
 /**
- * Create a server stub
+ * Describe the tests
  */
-const mockServer = nock('http://reaxios.com', {
-    reqheaders: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Credentials': 'true',
-        'Access-Control-Allow-Methods': 'POST, GET, HEAD, OPTIONS',
-        'Access-Control-Allow-Headers': 'Origin, Accept, x-auth-token, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers'
-    }
-});
-
 describe('Given an instance of reAxios', () => {
 
     let reAxiosInstance;
@@ -52,18 +43,23 @@ describe('Given an instance of reAxios', () => {
             author: 'Sandeep Vattapparambil'
         };
 
-        mockServer.persist().get('/posts/1').reply(200, expected);
+        /**
+         * Create a server stub
+         */
+        const mockServer = nock('http://reaxios.com').persist();
 
-        // const promise = new Promise((resolve, reject) => {
-        //     reAxiosInstance.get('/posts/1').subscribe(
-        //         resp => {
-        //             resolve(resp);
-        //         },
-        //         err => {
-        //             reject(err);
-        //         }
-        //     );
-        // });
-        // await expect(promise).resolves.toEqual(expected);
+        mockServer.get('/posts/1').reply(200, expected);
+
+        const promise = new Promise((resolve, reject) => {
+            reAxiosInstance.get('/posts/1').subscribe(
+                resp => {
+                    resolve(resp.data);
+                },
+                err => {
+                    reject(err);
+                }
+            );
+        });
+        await expect(promise).resolves.toEqual(expected);
     });
 });
