@@ -1,3 +1,6 @@
+/**
+ * Manual testing
+ */
 const ReAxios = require('../dist/reAxios.js');
 
 const http = new ReAxios({
@@ -7,7 +10,7 @@ const http = new ReAxios({
 // plain GET request
 http.get('/').subscribe(
   response => {
-    console.log(response); // no need to 'response.data'
+    console.log(response);
   },
   err => {
     console.error(err);
