@@ -6,7 +6,7 @@
 /**
  * Nockjs - A standin dummy server
  */
-import * as nock from 'nock';
+import nock from 'nock';
 
 /**
  * Get build distributable

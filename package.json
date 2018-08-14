@@ -7,7 +7,7 @@
   "scripts": {
     "build-prod": "webpack --config=./script/webpack.config.js --env.production",
     "build-dev": "webpack --config=./script/webpack.config.js ",
-    "test": "jest ./test"
+    "test": "jest ./test/reAxios.spec.js"
   },
   "repository": {
     "type": "git",
