@@ -1,3 +1,3 @@
 ![logo](https://github.com/SandeepVattapparambil/reaxios/blob/master/public/reAxios.png)
 # reAxios 
-Axios wrapped in reactive extentions **[WIP]**
+A simple reactive observable wrapper for the popular [Axios](https://www.npmjs.com/package/axios) library.
