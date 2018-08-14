@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+module.exports =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -130,7 +131,7 @@ var _axios = __webpack_require__(1);
 
 var _axios2 = _interopRequireDefault(_axios);
 
-var _Observable = __webpack_require__(2);
+var _rxjs = __webpack_require__(2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -237,7 +238,7 @@ var ReAxios = function () {
             /**
              * Return the observable
              */
-            return new _Observable.Observable(function (subscriber) {
+            return new _rxjs.Observable(function (subscriber) {
                 request.then(function (response) {
                     subscriber.next(response);
                     subscriber.complete();
@@ -355,7 +356,7 @@ module.exports = require("axios");
 /* 2 */
 /***/ (function(module, exports) {
 
-module.exports = require("rxjs/Observable");
+module.exports = require("rxjs");
 
 /***/ })
 /******/ ]);
