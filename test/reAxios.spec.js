@@ -62,4 +62,40 @@ describe('Given an instance of reAxios', () => {
         });
         await expect(promise).resolves.toEqual(expected);
     });
+
+    it('reAxiosInstance makes a successful POST request', async () => {
+
+        reAxiosInstance = new reAxios({
+            baseURL: 'http://reaxios.com',
+        });
+
+        const body = {
+            id: 1,
+            title: 'Hello reAxios!',
+            author: 'Sandeep Vattapparambil'
+        };
+
+        const response = {
+            msg: 'success'
+        }
+
+        /**
+         * Create a server stub
+         */
+        const mockServer = nock('http://reaxios.com').persist();
+
+        mockServer.post('/', body).reply(200, response);
+
+        const promise = new Promise((resolve, reject) => {
+            reAxiosInstance.post('/', body).subscribe(
+                resp => {
+                    resolve(resp.data);
+                },
+                err => {
+                    reject(err);
+                }
+            );
+        });
+        await expect(promise).resolves.toEqual(response);
+    });
 });
