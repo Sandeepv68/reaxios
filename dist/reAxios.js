@@ -1,6 +1,15 @@
 #!/usr/bin/env node
-module.exports =
-/******/ (function(modules) { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define("reAxios", [], factory);
+	else if(typeof exports === 'object')
+		exports["reAxios"] = factory();
+	else
+		root["reAxios"] = factory();
+})(this, function() {
+return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -83,11 +92,16 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/reAxios.js");
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ "./src/reAxios.js":
+/*!************************!*\
+  !*** ./src/reAxios.js ***!
+  \************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -120,6 +134,10 @@ module.exports =
  * Axios library for ajax
  */
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 /**
@@ -127,11 +145,11 @@ var _createClass = function () { function defineProperties(target, props) { for 
  */
 
 
-var _axios = __webpack_require__(1);
+var _axios = __webpack_require__(/*! axios */ "axios");
 
 var _axios2 = _interopRequireDefault(_axios);
 
-var _rxjs = __webpack_require__(2);
+var _rxjs = __webpack_require__(/*! rxjs */ "rxjs");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -326,38 +344,32 @@ var ReAxios = function () {
     return ReAxios;
 }();
 
-/**
- * Simple UMD setup
- */
-
-/**
- * Try adding to global window object if available
- */
-
-
-try {
-    window.ReAxios = ReAxios;
-} catch (error) {}
-
-/**
- * Try exporting as a module otherwise
- */
-try {
-    module.exports = ReAxios;
-} catch (error) {}
+exports.default = ReAxios;
 
 /***/ }),
-/* 1 */
+
+/***/ "axios":
+/*!************************!*\
+  !*** external "axios" ***!
+  \************************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
 module.exports = require("axios");
 
 /***/ }),
-/* 2 */
+
+/***/ "rxjs":
+/*!***********************!*\
+  !*** external "rxjs" ***!
+  \***********************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
 module.exports = require("rxjs");
 
 /***/ })
-/******/ ]);
+
+/******/ });
+});
 //# sourceMappingURL=reAxios.js.map
