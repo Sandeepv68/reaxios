@@ -94,6 +94,12 @@ The default HTTP GET method of Axios wrapped in an observable.
 ```js
 reAxios.get(url, queryParams)
 ```
+##### Paraneters
+| **Parameter** | **Type** | **Description** |
+| -- | -- | -- |
+| **url** | *String* | The url to be fetched |
+| **queryParams** | *Object* | The query parameters to be passed along with the url |
+
 example:
 ```js
 reAxios.get(url, queryParams).subscribe(
@@ -111,6 +117,13 @@ The default HTTP POST method of Axios wrapped in an observable.
 ```js
 reAxios.post(url, body, queryParams)
 ```
+##### Paraneters
+| **Parameter** | **Type** | **Description** |
+| -- | -- | -- |
+| **url** | *String* | The url to be fetched |
+| **body** | *Object* | The request body |
+| **queryParams** | *Object* | The query parameters to be passed along with the url |
+
 example:
 ```js
 reAxios.post(url, body, queryParams).subscribe(
@@ -128,6 +141,13 @@ The default HTTP PUT method of Axios wrapped in an observable.
 ```js
 reAxios.put(url, body, queryParams)
 ```
+##### Paraneters
+| **Parameter** | **Type** | **Description** |
+| -- | -- | -- |
+| **url** | *String* | The url to be fetched |
+| **body** | *Object* | The request body |
+| **queryParams** | *Object* | The query parameters to be passed along with the url |
+
 example:
 ```js
 reAxios.put(url, body, queryParams).subscribe(
@@ -145,6 +165,13 @@ The default HTTP PATCH method of Axios wrapped in an observable.
 ```js
 reAxios.patch(url, body, queryParams)
 ```
+##### Paraneters
+| **Parameter** | **Type** | **Description** |
+| -- | -- | -- |
+| **url** | *String* | The url to be fetched |
+| **body** | *Object* | The request body |
+| **queryParams** | *Object* | The query parameters to be passed along with the url |
+
 example:
 ```js
 reAxios.patch(url, body, queryParams).subscribe(
@@ -162,6 +189,12 @@ The default HTTP DELETE method of Axios wrapped in an observable.
 ```js
 reAxios.delete(url, queryParams)
 ```
+##### Paraneters
+| **Parameter** | **Type** | **Description** |
+| -- | -- | -- |
+| **url** | *String* | The url to be fetched |
+| **queryParams** | *Object* | The query parameters to be passed along with the url |
+
 example:
 ```js
 reAxios.delete(url, queryParams).subscribe(
