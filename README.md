@@ -44,6 +44,12 @@ Using npm
 ```sh
 npm i --save reaxios
 ```
+
+Using yarn
+```sh
+yarn add reaxios
+```
+
 #### Usage
 ```js
 //In your Node.js app
