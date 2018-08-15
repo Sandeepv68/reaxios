@@ -12,11 +12,7 @@ module.exports = (env) => {
          * set webpack build mode
          */
         mode: env && env.production === true ? 'production' : 'development',
-        /**
-         * set target as server (node)
-         */
-        target: 'node',
-
+        
         /**
          * ignore all modules in node_modules folder
          */
@@ -27,7 +23,7 @@ module.exports = (env) => {
          */
         plugins: [
             new webpack.BannerPlugin({
-                banner: '#!/usr/bin/env node',
+                banner: '//reAxios',
                 raw: true
             })
         ],
