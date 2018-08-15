@@ -1,5 +1,5 @@
 /**
- * reAxios v0.0.1
+ * reAxios v0.0.2
  * Axios ajax library wrapped in RxJs for the cool and popular kids
  * Written by: Sandeep Vattapparambil
  * Email: sandeepv68@gmail.com

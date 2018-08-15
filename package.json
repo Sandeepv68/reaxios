@@ -1,6 +1,6 @@
 {
   "name": "reaxios",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Axios ajax library wrapped in RxJs observables, The popular kids are doing it.",
   "private": false,
   "main": "dist/reAxios.min.js",
