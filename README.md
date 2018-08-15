@@ -38,7 +38,7 @@ This library is dependent on the following Npm packages:
 >**Note** Missing dependency will cause errors.
 
 #### Installation
-**reAxios** is a UMD module, which means it can be run across all javascript environments ranging from browsers to servers(node). reAxios can be used on browsers in conjunction with RxJs and axios, or in node-like browser environments as in ReactJS, AngularJS, VueJS or MarkoJS or it can be used in NodeJS apps.
+**reAxios** is a UMD module, which means it can be run across all javascript environments ranging from browsers to servers(node). reAxios can be used on browsers in conjunction with RxJs and axios in node-like browser environments as in ReactJS, AngularJS, VueJS or MarkoJS or it can be used in NodeJS apps.
 
 Using npm
 ```sh
