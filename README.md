@@ -38,7 +38,7 @@ This library is dependent on the following Npm packages:
 >**Note** Missing dependency will cause errors.
 
 #### Installation
-**reAxios** is a UMD module, which means it can be run across all javascript environments ranging from browsers to servers(node). reAxios can be used on browsers in conjunction with RxJs and axios, or in node-like browser environments as in ReactJS, AngularJS, VueJS or MarkoJS or it can be used in NodeJS apps
+**reAxios** is a UMD module, which means it can be run across all javascript environments ranging from browsers to servers(node). reAxios can be used on browsers in conjunction with RxJs and axios, or in node-like browser environments as in ReactJS, AngularJS, VueJS or MarkoJS or it can be used in NodeJS apps.
 
 Using npm
 ```sh
@@ -87,6 +87,94 @@ reAxios.get('/').subscribe(
     - Circle CI added
 
 #### API Documentation
+Various apis provided by reAxios are documented here.
+
+##### reAxios.get()
+The default HTTP GET method of Axios wrapped in an observable.
+```js
+reAxios.get(url, queryParams)
+```
+example:
+```js
+reAxios.get(url, queryParams).subscribe(
+  response => {
+    console.log(response.data);
+  },
+  err => {
+    console.error(err);
+  }
+);
+```
+
+##### reAxios.post()
+The default HTTP POST method of Axios wrapped in an observable.
+```js
+reAxios.post(url, body, queryParams)
+```
+example:
+```js
+reAxios.post(url, body, queryParams).subscribe(
+  response => {
+    console.log(response.data);
+  },
+  err => {
+    console.error(err);
+  }
+);
+```
+
+##### reAxios.put()
+The default HTTP PUT method of Axios wrapped in an observable.
+```js
+reAxios.put(url, body, queryParams)
+```
+example:
+```js
+reAxios.put(url, body, queryParams).subscribe(
+  response => {
+    console.log(response.data);
+  },
+  err => {
+    console.error(err);
+  }
+);
+```
+
+##### reAxios.patch()
+The default HTTP PATCH method of Axios wrapped in an observable.
+```js
+reAxios.patch(url, body, queryParams)
+```
+example:
+```js
+reAxios.patch(url, body, queryParams).subscribe(
+  response => {
+    console.log(response.data);
+  },
+  err => {
+    console.error(err);
+  }
+);
+```
+
+##### reAxios.delete()
+The default HTTP DELETE method of Axios wrapped in an observable.
+```js
+reAxios.delete(url, queryParams)
+```
+example:
+```js
+reAxios.delete(url, queryParams).subscribe(
+  response => {
+    console.log(response.data);
+  },
+  err => {
+    console.error(err);
+  }
+);
+```
+
+>**Note** All advanced RxJs operations can be performed on the observables returned by reAxios.
 
 #### Continuous Integration (CI)
 Continuous Integration services monitor repositories for changes, then automatically run unit tests on your behalf, typically in a containerized environment. To test this setup works in a continuous integration environment, an integration was done with Travis CI & CircleCI. According to the Travis Node.js Documentation, Travis automatically runs npm install and npm test. The only additional thing I had to add to the Travis configuration was to run npm run build before running the tests. The working Travis config looks like this:
