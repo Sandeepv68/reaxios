@@ -7,7 +7,7 @@
 A simple reactive **observable** wrapper for the popular [Axios](https://www.npmjs.com/package/axios) library. Axios is a **Promise** based HTTP client for the browser and node.js. reAxios wraps axios inside an RxJs observable and exposes it. All the axios features and options are supported through reAxios.
 
 ### Why RxJs and Observables ?
-**RxJs** is a JavaScript library to perform **Reactive programming**. RxJs is the JavaScript implementation of **ReactiveX**. ReactiveX is a combination of the best ideas from the Observer pattern, the Iterator pattern, and functional programming. There are many advantages for reacive programming:
+**RxJs** is a JavaScript library to perform **Reactive programming**. RxJs is the JavaScript implementation of **ReactiveX**. ReactiveX is a combination of the best ideas from the Observer pattern, the Iterator pattern, and functional programming. There are many advantages for reactive programming:
 - **Functional** -
 Avoid intricate stateful programs, using clean input/output functions over observable streams.
 
@@ -23,7 +23,7 @@ Observables and Schedulers in ReactiveX allow the programmer to abstract away lo
 - And the popular kids are doing observables nowadays, its the new **cool**
 
 ### Getting started
-Follow these steps to grab a copy of **reAxios** and use it your project. The `reaxios` package will have two build distributables, a regular build and minified compressed build. By default package managers are set to use the minified version
+Follow these steps to grab a copy of **reAxios** and use it in your project. The `reaxios` package will have two build distributables, a regular build and minified compressed build. By default package managers are set to use the minified version
 
 | **build** | **asset** | **size** |
 | --- | --- | --- |
@@ -38,6 +38,8 @@ This library is dependent on the following Npm packages:
 >**Note** Missing dependency will cause errors.
 
 #### Installation
+**reAxios** is a UMD module, which means it can be run across all javascript environments ranging from browsers to servers(node). reAxios can be used on browsers in conjunction with RxJs and axios, or in node-like browser environments as in ReactJS, AngularJS, VueJS or MarkoJS or it can be used in NodeJS apps
+
 Using npm
 ```sh
 npm i --save reaxios
@@ -46,6 +48,9 @@ npm i --save reaxios
 ```js
 //In your Node.js app
 const ReAxios = require('reaxios');
+
+//Or using ES6 - ES7 import statement
+import reAxios from 'reaxios';
 
 //ReAxios can take all the axios configuration parameters here
 const reAxios = new ReAxios({
@@ -74,6 +79,7 @@ reAxios.get('/').subscribe(
 #### Changelog
 - **v0.0.1**
     - es6 code base
+    - UMD build, can be used on browser and server side
     - 100% code coverage
     - Tests using jest
     - Vulnerabilities check added
@@ -104,40 +110,31 @@ script:
 CircleCI is similar to Travis-CI, but is more extensible and has much more control over the build process. The CircleCI config looks like this:
 ```yml
 # Javascript Node CircleCI 2.0 configuration file
-#
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
-#
 version: 2
 jobs:
   build:
     docker:
       # specify the version you desire here
       - image: circleci/node:7.10
-      
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
       # - image: circleci/mongo:3.4.4
-
     working_directory: ~/repo
-
     steps:
       - checkout
-
       # Download and cache dependencies
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "package.json" }}
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
-
       - run: npm install
-
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-        
       # run tests!
       - run: npm run build-dev
       - run: npm run build-prod
