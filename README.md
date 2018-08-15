@@ -77,7 +77,7 @@ reAxios.get('/').subscribe(
 }
 ```
 #### Changelog
-- **v0.0.1**
+- **v0.0.2** - **v0.0.1**
     - es6 code base
     - UMD build, can be used on browser and server side
     - 100% code coverage
