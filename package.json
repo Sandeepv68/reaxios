@@ -3,16 +3,13 @@
   "version": "0.0.1",
   "description": "Axios ajax library wrapped in RxJs observables, The popular kids are doing it.",
   "private": false,
-  "main": "dist/reAxios.js",
+  "main": "dist/reAxios.min.js",
   "scripts": {
     "build-prod": "webpack --config=./script/webpack.config.js --env.production",
     "build-dev": "webpack --config=./script/webpack.config.js ",
     "test": "jest ./test/reAxios.spec.js --coverage"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/SandeepVattapparambil/reaxios.git"
-  },
+  "repository": "git+https://github.com/SandeepVattapparambil/reaxios.git",
   "keywords": [
     "reAxios",
     "Axios",
