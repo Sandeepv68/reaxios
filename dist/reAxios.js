@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+//reAxios
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
@@ -141,7 +141,7 @@ Object.defineProperty(exports, "__esModule", {
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 /**
- * Get Oobservables from RxJs
+ * Get Observables from RxJs
  */
 
 
@@ -176,6 +176,7 @@ var ReAxios = function () {
 
     /**
      * @memberof ReAxios
+     * @inner
      * @function makeRequest
      * A function to construct a http request using any http-method and 
      * associated parameters and pass it to axios instance
@@ -269,6 +270,7 @@ var ReAxios = function () {
 
         /**
          * @memberof ReAxios
+         * @inner
          * @function get
          * A helper function to get a url with passed in parameters
          * @param {String} url - The url string
@@ -286,6 +288,7 @@ var ReAxios = function () {
 
         /**
          * @memberof ReAxios
+         * @inner
          * @function post
          * A helper function to post a url with paramerters passed in
          * @param {String} url - The url string
@@ -301,6 +304,7 @@ var ReAxios = function () {
 
         /**
          * @memberof ReAxios
+         * @inner
          * @function put
          * A helper function to put a url with paramerters passed in
          * @param {String} url - The url string
@@ -316,6 +320,7 @@ var ReAxios = function () {
 
         /**
          * @memberof ReAxios
+         * @inner
          * @function patch
          * A helper function to patch a url with paramerters passed in
          * @param {String} url - The url string
@@ -331,6 +336,7 @@ var ReAxios = function () {
 
         /**
          * @memberof ReAxios
+         * @inner
          * @function delete
          * A helper function to delete a url with paramerters passed in
          * @param {String} url - The url string
