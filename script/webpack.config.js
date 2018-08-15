@@ -11,7 +11,7 @@ module.exports = (env) => {
         /**
          * set webpack build mode
          */
-        mode: 'none',
+        mode: env && env.production === true ? 'production' : 'development',
         /**
          * set target as server (node)
          */
@@ -41,9 +41,12 @@ module.exports = (env) => {
         entry: path.resolve(__dirname, '../', 'src/reAxios.js'),
         output: {
             //set output target for commonjs require
-            libraryTarget: 'commonjs2',
+            library: 'reAxios',
+            libraryTarget: 'umd',
             path: path.resolve(__dirname, '../', 'dist'),
-            filename: env && env.production === true ? 'reAxios.min.js' : 'reAxios.js'
+            filename: env && env.production === true ? 'reAxios.min.js' : 'reAxios.js',
+            umdNamedDefine: true,
+            globalObject: 'this'
         },
         module: {
             rules: [{
