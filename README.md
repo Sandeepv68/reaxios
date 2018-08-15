@@ -30,7 +30,7 @@ Follow these steps to grab a copy of **reAxios** and use it in your project. The
 | compressed | reAxios.min.js | 3KB |
 | uncompressed | reAxios.js | 12KB |
 
-#### Dependecy
+#### Dependency
 This library is dependent on the following Npm packages:
 - [rxjs](https://www.npmjs.com/package/rxjs)
 - [axios](https://www.npmjs.com/package/axios)

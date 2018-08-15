@@ -29,7 +29,7 @@
 import axios from 'axios';
 
 /**
- * Get Oobservables from RxJs
+ * Get Observables from RxJs
  */
 import {
     Observable,
@@ -53,6 +53,7 @@ class ReAxios {
 
     /**
      * @memberof ReAxios
+     * @inner
      * @function makeRequest
      * A function to construct a http request using any http-method and 
      * associated parameters and pass it to axios instance
@@ -142,6 +143,7 @@ class ReAxios {
 
     /**
      * @memberof ReAxios
+     * @inner
      * @function get
      * A helper function to get a url with passed in parameters
      * @param {String} url - The url string
@@ -153,6 +155,7 @@ class ReAxios {
 
     /**
      * @memberof ReAxios
+     * @inner
      * @function post
      * A helper function to post a url with paramerters passed in
      * @param {String} url - The url string
@@ -165,6 +168,7 @@ class ReAxios {
 
     /**
      * @memberof ReAxios
+     * @inner
      * @function put
      * A helper function to put a url with paramerters passed in
      * @param {String} url - The url string
@@ -177,6 +181,7 @@ class ReAxios {
 
     /**
      * @memberof ReAxios
+     * @inner
      * @function patch
      * A helper function to patch a url with paramerters passed in
      * @param {String} url - The url string
@@ -189,6 +194,7 @@ class ReAxios {
 
     /**
      * @memberof ReAxios
+     * @inner
      * @function delete
      * A helper function to delete a url with paramerters passed in
      * @param {String} url - The url string
