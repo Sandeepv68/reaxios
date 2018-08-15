@@ -199,20 +199,4 @@ class ReAxios {
     };
 }
 
-/**
- * Simple UMD setup
- */
-
-/**
- * Try adding to global window object if available
- */
-try {
-    window.ReAxios = ReAxios;
-} catch (error) {}
-
-/**
- * Try exporting as a module otherwise
- */
-try {
-    module.exports = ReAxios;
-} catch (error) {}
+export default ReAxios;
