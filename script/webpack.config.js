@@ -14,6 +14,13 @@ module.exports = (env) => {
         mode: env && env.production === true ? 'production' : 'development',
         
         /**
+         * Node polyfills for browser
+         */
+        node: {
+            process: true
+        },
+        
+        /**
          * ignore all modules in node_modules folder
          */
         externals: [nodeExternals()],
@@ -23,7 +30,7 @@ module.exports = (env) => {
          */
         plugins: [
             new webpack.BannerPlugin({
-                banner: '//reAxios',
+                banner: '//reAxios (c) 2018, Sandeep Vattapparambil',
                 raw: true
             })
         ],
@@ -42,7 +49,7 @@ module.exports = (env) => {
             path: path.resolve(__dirname, '../', 'dist'),
             filename: env && env.production === true ? 'reAxios.min.js' : 'reAxios.js',
             umdNamedDefine: true,
-            globalObject: 'this'
+            globalObject: 'typeof self !== \'undefined\' ? self : this'
         },
         module: {
             rules: [{
