@@ -1,5 +1,5 @@
 ![logo](public/reAxios.png)
-# reAxios v0.0.2
+# reAxios v0.0.3
 
 [![GitHub license](https://img.shields.io/github/license/SandeepVattapparambil/reaxios.svg?style=flat-square)](https://github.com/SandeepVattapparambil/reaxios/blob/master/LICENSE) ![travisci](https://api.travis-ci.org/SandeepVattapparambil/reaxios.svg?branch=master) [![CircleCI](https://circleci.com/gh/SandeepVattapparambil/reaxios.svg?style=svg)](https://circleci.com/gh/SandeepVattapparambil/reaxios) [![Known Vulnerabilities](https://snyk.io/test/github/SandeepVattapparambil/reaxios/badge.svg?targetFile=package.json)](https://snyk.io/test/github/SandeepVattapparambil/reaxios?targetFile=package.json) [![CodeFactor](https://www.codefactor.io/repository/github/sandeepvattapparambil/reaxios/badge/master)](https://www.codefactor.io/repository/github/sandeepvattapparambil/reaxios/overview/master) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/a6988d53e74246649974096fcdbe55bb)](https://www.codacy.com/project/sandeepv68/reaxios/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=SandeepVattapparambil/reaxios&amp;utm_campaign=Badge_Grade_Dashboard) [![codecov](https://codecov.io/gh/SandeepVattapparambil/reaxios/branch/master/graph/badge.svg)](https://codecov.io/gh/SandeepVattapparambil/reaxios) [![GitHub issues](https://img.shields.io/github/issues/SandeepVattapparambil/reaxios.svg?style=flat-square)](https://github.com/SandeepVattapparambil/reaxios/issues) [![GitHub forks](https://img.shields.io/github/forks/SandeepVattapparambil/reaxios.svg?style=flat-square)](https://github.com/SandeepVattapparambil/reaxios/network) [![GitHub stars](https://img.shields.io/github/stars/SandeepVattapparambil/reaxios.svg?style=flat-square)](https://github.com/SandeepVattapparambil/reaxios/stargazers) [![Twitter](https://img.shields.io/twitter/url/https/github.com/SandeepVattapparambil/reaxios.svg?style=flat-square)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FSandeepVattapparambil%2Freaxios)
 
@@ -27,7 +27,7 @@ Follow these steps to grab a copy of **reAxios** and use it in your project. The
 
 | **build** | **asset** | **size** |
 | --- | --- | --- |
-| compressed | reAxios.min.js | 3KB |
+| compressed | reAxios.min.js | 2.73KB |
 | uncompressed | reAxios.js | 12KB |
 
 #### Dependency
@@ -83,14 +83,18 @@ reAxios.get('/').subscribe(
 }
 ```
 #### Changelog
+- **v0.0.3**
+  - UMD Tweaks
+  - Documentation updates
+
 - **v0.0.2** - **v0.0.1**
-    - es6 code base
-    - UMD build, can be used on browser and server side
-    - 100% code coverage
-    - Tests using jest
-    - Vulnerabilities check added
-    - Travis CI added
-    - Circle CI added
+  - es6 code base
+  - UMD build, can be used on browser and server side
+  - 100% code coverage
+  - Tests using jest
+  - Vulnerabilities check added
+  - Travis CI added
+  - Circle CI added
 
 #### API Documentation
 Various apis provided by reAxios are documented here.
@@ -123,7 +127,7 @@ The default HTTP POST method of Axios wrapped in an observable.
 ```js
 reAxios.post(url, body, queryParams)
 ```
-##### Paraneters
+##### Parameters
 | **Parameter** | **Type** | **Description** |
 | -- | -- | -- |
 | **url** | *String* | The url to be fetched |
@@ -147,7 +151,7 @@ The default HTTP PUT method of Axios wrapped in an observable.
 ```js
 reAxios.put(url, body, queryParams)
 ```
-##### Paraneters
+##### Parameters
 | **Parameter** | **Type** | **Description** |
 | -- | -- | -- |
 | **url** | *String* | The url to be fetched |
@@ -171,7 +175,7 @@ The default HTTP PATCH method of Axios wrapped in an observable.
 ```js
 reAxios.patch(url, body, queryParams)
 ```
-##### Paraneters
+##### Parameters
 | **Parameter** | **Type** | **Description** |
 | -- | -- | -- |
 | **url** | *String* | The url to be fetched |
@@ -195,7 +199,7 @@ The default HTTP DELETE method of Axios wrapped in an observable.
 ```js
 reAxios.delete(url, queryParams)
 ```
-##### Paraneters
+##### Parameters
 | **Parameter** | **Type** | **Description** |
 | -- | -- | -- |
 | **url** | *String* | The url to be fetched |
