@@ -186,10 +186,6 @@ describe('Given an instance of reAxios', () => {
             baseURL: 'http://reaxios.com',
         });
 
-        const body = {
-            id: 1
-        };
-
         /**
          * Create a server stub
          */
@@ -208,5 +204,50 @@ describe('Given an instance of reAxios', () => {
             );
         });
         await expect(promise).resolves.toEqual(200);
+    });
+
+    it('reAxiosInstance makes a successful GET request to JSON API', async () => {
+
+        reAxiosInstance = new reAxios({
+            baseURL: 'https://jsonplaceholder.typicode.com',
+        });
+
+        const promise = new Promise((resolve, reject) => {
+            reAxiosInstance.get('/todos/1').subscribe(
+                resp => {
+                    resolve(resp.status);
+                },
+                err => {
+                    reject(err);
+                }
+            );
+        });
+        await expect(promise).resolves.toEqual(200);
+    });
+
+    it('reAxiosInstance makes a successful GET request to JSON API and retreives data', async () => {
+
+        reAxiosInstance = new reAxios({
+            baseURL: 'https://jsonplaceholder.typicode.com',
+        });
+
+        const response = {
+            "userId": 1,
+            "id": 1,
+            "title": "delectus aut autem",
+            "completed": false
+        };
+
+        const promise = new Promise((resolve, reject) => {
+            reAxiosInstance.get('/todos/1').subscribe(
+                resp => {
+                    resolve(resp.data);
+                },
+                err => {
+                    reject(err);
+                }
+            );
+        });
+        await expect(promise).resolves.toEqual(response);
     });
 });
