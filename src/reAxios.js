@@ -205,4 +205,4 @@ class ReAxios {
     };
 }
 
-export default ReAxios;
+module.exports = ReAxios;
