@@ -7,7 +7,9 @@
   "scripts": {
     "build-prod": "webpack --config=./script/webpack.config.js --env.production",
     "build-dev": "webpack --config=./script/webpack.config.js ",
-    "test": "jest ./test/reAxios.spec.js --coverage"
+    "test": "jest ./test/reAxios.spec.js --coverage",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": "git+https://github.com/SandeepVattapparambil/reaxios.git",
   "keywords": [
@@ -46,6 +48,8 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "rxjs": "^6.2.2"
-  }
+    "rxjs": "^6.2.2",
+    "snyk": "^1.161.1"
+  },
+  "snyk": true
 }
